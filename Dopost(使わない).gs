@@ -1,15 +1,17 @@
-function doPost(e) {
-  if (e == null || e.postData == null || e.postData.contents == null) return
-  let requestJSON = e.postData.contents
-  let requestObj = JSON.parse(requestJSON)
-  let text = requestObj.content.text // 応答メッセージ（今回はオウム返し）
 
-  let env = getEnv_()
-  env.userId = requestObj.source.userId
+// オウム返し 
+// function doPost(e) {
+//   if (e == null || e.postData == null || e.postData.contents == null) return
+//   let requestJSON = e.postData.contents
+//   let requestObj = JSON.parse(requestJSON)
+//   // let text = requestObj.content.text // 応答メッセージ（今回はオウム返し）
+//   let text = ss()
 
-  // LINE WORKS にメッセージを送信
-  LINEWORKS.userMessageSend(env, text)
-}
+//   let env = getEnv_()
+
+//   //グループ作成者のユーザID 
+//   env.userId = "ueda.negotiation@styleartscorporation"
+// }
 
 function getEnv_() {
   return {
@@ -23,9 +25,13 @@ function getEnv_() {
   }
 }
 
-function createBot() {
-  let env = getEnv_()
-  env.BOT_ID= LINEWORKS.qiitaSampleBotCreate(env).botId
-  LINEWORKS.qiitaSampleBotDomainRegister(env)
-  Logger.log("BOT_ID: " + String(env.BOT_ID))
-}
+// function createBot() {
+//   let env = getEnv_()
+//   env.BOT_ID = LINEWORKS.qiitaSampleBotCreate(env).botId
+//   LINEWORKS.qiitaSampleBotDomainRegister(env)
+//   Logger.log("BOT_ID: " + String(env.BOT_ID))
+// }
+
+
+
+
